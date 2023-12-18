@@ -1,0 +1,22 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+            <%- include('./partielles/messages') %>
+            <h1><i class="fas fa-book"></i> Ajout du livre</h1>
+            <form action="/livres/livreAdd" method="post" >
+                <%- include('./partielles/edit_titre') %>
+                <%- include('./partielles/edit_auteur') %>
+                <%- include('./partielles/edit_editeur') %>          
+                <%- include('./partielles/edit_nbPages') %>
+                <%- include('./partielles/edit_langues') %> 
+                <%- include('./partielles/edit_prix') %>
+                <%- include('./partielles/edit_date') %> 
+                <%- include('./partielles/edit_resume') %>  
+                <%- include('./partielles/edit_imageLivreUrl') %>                   
+
+                <button type="submit" class="btn btn-primary btn-block">Confirmer l'ajout du livre</button>
+            </form>
+            <a href="/index" class="btn btn-secondary btn-block">Annuler du livre</a>
+        </div>
+    </div>
+</div>

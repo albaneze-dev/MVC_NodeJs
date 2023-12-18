@@ -1,0 +1,22 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body text-center">
+            <%- include ('./partielles/messages') %>
+            <h1><i class="fab fa-brands fa-node-js fa-3x"></i></h1>
+           <div class="text-center">
+            <h1> PFI</h1>
+               
+              <% if (typeof(usager)!=="undefined") { %>
+                <p class="text-center" class="login">Utilisateur: <%= usager.nom %> (<%= usager.email%> )</p>
+            <% } %>  
+           </div>
+            
+            
+            <a href="/usagers/menu" class="btn btn-primary btn-block mb-2">Affichage de la liste des usagers</a>
+            <a href="/livres" class="btn btn-primary btn-block mb-2">Affichage de la liste des livres</a>
+            <a href="/usagers/ajouter" class="btn btn-primary btn-block mb-2">Ajouter un Usager</a>
+            <a href="/livres/ajouter" class="btn btn-primary btn-block mb-2">Ajouter un livre</a>
+            <a href="/usagers/logout" class="btn btn-secondary btn-block">Quitter</a>
+        </div>
+    </div>
+</div>

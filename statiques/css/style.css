@@ -1,0 +1,13 @@
+body {
+    background-color: blanchedalmond;
+    color: blue;
+}
+.login {
+    text-align: right;
+}
+
+.imgProfil{
+    width: 50px;
+    border: 2px solid rgb(255, 179, 36);
+    border-radius: 50%;
+}

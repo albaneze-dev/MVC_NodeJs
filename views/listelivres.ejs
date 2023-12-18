@@ -1,0 +1,51 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <% if (typeof livres == 'undefined') { %>
+            <p>Aucun livre</p>
+        <% } else { %> 
+        <% livres.map(function(e) { %>
+    <div class="col-4 ">
+            <div class="card text-bg-light mb-3" style="max-width: 18rem;">
+                    
+                <div class="card-header"><img src=<%= e.nomImage %>  class="card-img-top">   </div>
+                <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#resume">Détails</button>
+                <div id="resume" class="collapse">
+                    
+                <div class="card-body">
+                    <p>Titre: <%= e.titre %> </p>
+       
+                <p>
+                        <a href="/livres/editer/<%=e._id%>"> <i class=" fas fa-solid fa-pen"></i></a>
+                                        
+                                        <a href="/livres/supprimer/<%=e.titre%>" onclick="return confirm('Etes-vous certain???');"><i class=" fas fa-solid fa-trash"></i></a>
+                </p>
+                    <p>ISBN: <%= e._id %></p>
+                    <p>Auteur: <%= e.auteur %></p>
+                    <p>Editeur: <%= e.editeur %></p>
+                    <p>Nombre de Pages: <%= e.nbPages %></p>
+                    <p>Langues: <%= e.langue %></p>
+                    <p>Prix: <%= e.prix%></p>
+                    <p>Date: <%= e.date %></p>
+                </div>
+                    <div class="container mt-3">
+                        
+                      <p>Resume:</p>
+                            <%= e.resume %>
+                        
+                      </div>
+                  
+        </div>
+    </div>
+</div>
+        <% }); %>
+        <% }; %>
+        </div>
+
+    </div>
+
+
+
+
+
+    <a  class="fixed-bottom" href="/index"><i class="fas fa-backward fa-lg"></i>Retournez à la Page d'Accueil</a>  

@@ -1,0 +1,18 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+            <%- include('./partielles/messages') %>
+            <h1><i class="fas fa-user"></i> Modification l'image</h1>
+            <form action="/usagers/userModifImage" method="post" enctype="multipart/form-data">
+                <%- include('./partielles/edit_nom_email') %>
+                <%- include('./partielles/edit_roles') %>   
+                <%- include('./partielles/edit_image') %>   
+                    <div>
+                    <a href="/usagers/editerPWD/<%=email%>">Modifier le Usager</a>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Confirmer l'a modification l'image</button>
+            </form>
+            <a href="/index" class="btn btn-secondary btn-block">Annuler l'ajout</a>
+        </div>
+    </div>
+</div>

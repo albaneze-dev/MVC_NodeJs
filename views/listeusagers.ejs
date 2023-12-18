@@ -1,0 +1,54 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <% if (typeof listeUsagers == 'undefined') { %>
+            <p>Aucun usager</p>
+        <% } else { %> 
+        <% listeUsagers.map(function(e) { %>
+    <div class="col-3 ">
+            <div class="card text-bg-light mb-3" style="max-width: 18rem;">
+                <div class="card-header"><img  src="/images/<%= e.nomImage %>" class="card-img-top">
+                    
+                  
+                    </div>
+                   
+                   
+                <div class="card-body">
+                    <p> nom: <%= e.nom %>
+                      
+                    
+                    </p>
+               
+               <p>login: <%= e.email %>
+              (<%= e.email %>) 
+                      
+            
+            </p> 
+               <a href="/usagers/editer/<%=e.email%>"> <i class=" fas fa-solid fa-pen"></i></a>
+                    -
+                    <a href="/usagers/supprimer/<%=e.email%>" onclick="return confirm('Etes-vous certain???');"><i class=" fas fa-solid fa-trash"></i></a>
+                <% e.roles.map(function(roles) { %>
+                    <ul>
+                        <li>
+                            <%= roles %>
+                            <% if (e.roles.includes('gestion')) { %>
+                                <i class="fas fa-solid fa-lock"></i>
+                            <% } %>
+                            <% if (e.roles.includes('admin')) { %>
+                                <i class="fas fa-user-lock"></i>
+                            <% } %>
+                        </li>
+                    </ul>
+                 
+                <% }); %>
+            </p>
+        </div>
+    </div>
+</div>
+        <% }); %>
+        <% }; %>
+        </div>
+
+    </div>
+
+    <a  class="fixed-bottom" href="/index"><i class="fas fa-backward fa-lg"></i>Retournez à la Page d'Accueil</a>  

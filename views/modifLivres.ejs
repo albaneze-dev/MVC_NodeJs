@@ -1,0 +1,30 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+            <%- include('./partielles/messages') %>
+            <h1><i class="fas fa-book"></i> Modification d'un livre</h1>
+            <form action="/livres/livreModif" method="post">
+                <div class="form-group">
+                    <label for="_id">id</label>
+                    <input type="text" name="_id" id="_id" class="form-control" 
+                    value="<%= typeof _id != 'undefined' ? _id : '' %>" readonly
+                       >
+                </div>
+                
+                <%- include('./partielles/edit_titre') %>
+                <%- include('./partielles/edit_auteur') %>
+                <%- include('./partielles/edit_editeur') %>          
+                <%- include('./partielles/edit_nbPages') %>
+                <%- include('./partielles/edit_langues') %> 
+                <%- include('./partielles/edit_prix') %>
+                <%- include('./partielles/edit_date') %> 
+                <%- include('./partielles/edit_resume') %>  
+                <%- include('./partielles/edit_imageLivreUrl') %>                 
+                
+                  
+                <button type="submit" class="btn btn-primary btn-block">Confirmer l'a modification du livre</button>
+            </form>
+            <a href="/index" class="btn btn-secondary btn-block">Annuler l'ajout</a>
+        </div>
+    </div>
+</div>
